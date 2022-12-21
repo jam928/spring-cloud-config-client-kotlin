@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-cloud-config-client-kotlin
+  profiles:
+    active: development
+  config:
+    import: configserver:http://localhost:8080
+  cloud:
+    config:
+      username: username
+      password: password
+      label: latest
+server:
+  port : 8081
+management:
+  server:
+    port: 8081
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
